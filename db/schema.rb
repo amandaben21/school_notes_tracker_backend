@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_05_015040) do
+ActiveRecord::Schema.define(version: 2021_08_05_033839) do
 
   create_table "notes", force: :cascade do |t|
     t.string "subject"
@@ -19,13 +19,15 @@ ActiveRecord::Schema.define(version: 2021_08_05_015040) do
     t.string "note_entry"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "reminder_id", null: false
+    t.index ["reminder_id"], name: "index_notes_on_reminder_id"
   end
 
   create_table "reminders", force: :cascade do |t|
     t.string "content"
-    t.integer "note_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "notes", "reminders"
 end

@@ -6,7 +6,7 @@ class Api::V1::RemindersController < ApplicationController
     end
 
     def create
-      @reminder = Reminder.new(reminder_params)
+      @reminder = @note.reminders.new(reminder_params)
       if @reminder.save
         render json: @reminder
       else
@@ -21,7 +21,9 @@ class Api::V1::RemindersController < ApplicationController
 
     def destroy
       @reminder = Reminder.find(params[:id])
+      @note = Note.find(reminder.note_id)
       @reminder.destroy
+      render json: @reminder
     end
 
     private

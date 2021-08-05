@@ -5,3 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+
+
+notes = Note.create(name: 'Amanda', subject: 'History', lesson_name: "The Great Depression', date:'8/1/2020', note_entry: 'The great depression was a tough time for all Americans during the 1920's") 
+
+

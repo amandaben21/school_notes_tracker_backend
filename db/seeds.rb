@@ -9,7 +9,7 @@
 
 Note.create(subject:"History", lesson_name: "The Great Depression",date:"8/1/2020", note_entry: "The great depression was a tough time for all Americans during the 1920's") 
 
-Reminder.create(note_id: 1, content: "google what life was like in the 1920s")
+
 
 
 
